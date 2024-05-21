@@ -13,8 +13,7 @@
         numero++;
         elm.dataset.num = numero;
         elm.addEventListener("mousedown", function (e) {
-            console.log(e.target.dataset.num);
-            categories = e.target.dataset.num;
+            categories = e.target.id.split('_')[1];
             let url = `https://gftnth00.mywhc.ca/tim37/wp-json/wp/v2/posts?categories=${categories}`;
             restApi(url);
         });

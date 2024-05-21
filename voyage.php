@@ -10,6 +10,7 @@ Plugin uri: https://github.com/eddytuto
 Version: 1.0.0
 Description: Permet d'afficher les destinations qui répondent à certains critères
 */
+$categories = [];
 function em_voyage_enqueue()
 {
     // filemtime // retourne en milliseconde le temps de la dernière modification
@@ -55,3 +56,13 @@ function creation_destinations()
 }
 
 add_shortcode('em_destination', 'creation_destinations');
+
+foreach ($categories as $elm_categorie) {
+    $nom_categorie = $elm_categorie->name;
+    $id_categorie = $elm_categorie->term_id;
+    $contenu .= '<button class="bouton_categorie" id="cat_'
+        . $id_categorie .
+        '">'
+        . $nom_categorie .
+        '</button>';
+}
