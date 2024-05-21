@@ -49,7 +49,7 @@
 
                     }
                     let contenu = article.content.rendered;
-                    contenu = contenu.substr(0, 75) + "...";
+                    contenu = contenu.substr(0, 100) + "...";
                     let lien = article.link;
                     // transformer le coontenue en tableau et faire un split
                     console.log(titre);
